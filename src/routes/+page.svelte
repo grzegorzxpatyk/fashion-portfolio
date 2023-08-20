@@ -12,12 +12,12 @@
 	</section>
 	<section class="h-screen max-h-screen w-screen bg-red-200 grid grid-cols-2 snap-start">
 		<div class="h-screen w-full flex flex-col justify-end items-start p-10 select-none">
-			<div class="w-full flex flex-row justify-between items-center">
-				<h1 class="text-4xl mb-2">Martyna Regucka</h1>
+			<div class="w-full flex flex-row justify-between items-center mb-4">
+				<h1 class="text-4xl">Martyna Regucka</h1>
 				<a
 					href="https://www.instagram.com/martynaregucka/"
 					target="_blank"
-					class="flex flex-row justify-center items-center"
+					class="hidden md:flex flex-row justify-center items-center"
 				>
 					<InstagramLogo class="mr-1" /> martynaregucka
 				</a>
