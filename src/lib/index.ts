@@ -20,8 +20,10 @@ import photo64 from './images/photo-64.jpg';
 import photo69 from './images/photo-69.jpg';
 import photo73 from './images/photo-73.jpg';
 import photo118 from './images/photo-118.jpg';
+import AboutMe from './AboutMe.svelte';
 
 export const PortfolioSection = PortfolioSection__SvelteComponent_;
+export const AboutMeSection = AboutMe;
 
 export const photos = {
 	photo1,
