@@ -11,7 +11,7 @@
 		<h1 class="text-5xl uppercase">portfolio</h1>
 	</section>
 	<section class="h-screen max-h-screen w-screen bg-red-200 grid grid-cols-2 snap-start">
-		<div class="h-screen w-full flex flex-col justify-end items-start p-10 select-none">
+		<div class="h-screen w-full flex flex-col justify-end items-start p-6 md:p-10 select-none">
 			<div class="w-full flex flex-row justify-between items-center mb-4">
 				<h1 class="text-4xl">Martyna Regucka</h1>
 				<a
@@ -22,7 +22,7 @@
 					<InstagramLogo class="mr-1" /> martynaregucka
 				</a>
 			</div>
-			<p class="text-justify text-sm lg:text-base">
+			<p class="text-justify text-sm md:text-base">
 				Innovative fashion designer and stylist, graduate of the Artistic School of Fashion Design.
 				Proven track record collaborating with diverse industry professionals, from designers and
 				photographers to managers and creative directors. Renowned for a keen sense of style,
