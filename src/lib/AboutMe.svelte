@@ -26,7 +26,7 @@
     </div>
     <div class="h-screen w-full lg:p-12">
         <img
-            class="h-full w-full object-cover"
+            class="h-full w-full object-cover object-top"
             src={portrait}
             alt="Portrait of a beautiful girl."
         />
