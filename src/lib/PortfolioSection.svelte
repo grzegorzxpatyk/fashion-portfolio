@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let images: Array<{ src: string; alt: string }> | undefined = undefined;
+	export let images: Images | undefined = undefined;
 </script>
 
 {#if images && images.length === 3}
@@ -14,7 +14,7 @@
 	<section class="h-screen w-screen grid grid-cols-2 snap-start">
 		{#each images as image}
 			<div class="h-full w-full overflow-hidden">
-				<img class="h-full w-full object-cover" src={image.src} alt={image.alt} />
+				<img class="h-full w-full object-cover {image.position ?? image.position}" src={image.src} alt={image.alt} />
 			</div>
 		{/each}
 	</section>

@@ -5,6 +5,7 @@
 	import { InstagramLogo, EnvelopeClosed } from 'radix-icons-svelte';
 	import { images } from '$lib/images';
 	import portrait from '$lib/images';
+	import { Positions } from '$lib/enums/Positions.enum';
 </script>
 
 <main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar">
@@ -26,7 +27,7 @@
 	/>
 	<PortfolioSection
 		images={[
-			{ src: images.half.half33, alt: 'something random' },
+			{ src: images.half.half33, alt: 'something random', position: Positions.BOTTOM },
 			{ src: images.half.half37, alt: 'something random' }
 		]}
 	/>
@@ -57,7 +58,7 @@
 	<PortfolioSection
 		images={[
 			{ src: images.half.half27, alt: 'something random' },
-			{ src: images.half.half48, alt: 'something random' }
+			{ src: images.half.half48, alt: 'something random', position: Positions.BOTTOM }
 		]}
 	/>
 	<PortfolioSection
@@ -87,7 +88,7 @@
 	<PortfolioSection
 		images={[
 			{ src: images.half.half16, alt: 'something random' },
-			{ src: images.half.half22, alt: 'something random' }
+			{ src: images.half.half22, alt: 'something random', position: Positions.TOP }
 		]}
 	/>
 	<PortfolioSection
