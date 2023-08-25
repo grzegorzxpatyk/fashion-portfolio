@@ -1,5 +1,6 @@
-@import '@fontsource/dm-serif-text';
+@import '@fontsource-variable/urbanist';
+
 
 body {
-	font-family: 'DM Serif Text', sans-serif;
+	font-family: 'Urbanist Variable', sans-serif;
 }
