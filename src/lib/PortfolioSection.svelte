@@ -21,7 +21,7 @@
 {:else if images && images.length === 1}
 	<section class="h-screen w-screen snap-start">
 		<div class="h-full w-full">
-			<img class="h-full w-full object-cover" src={images[0].src} alt={images[0].alt} />
+			<img class="h-full w-full {images[0].objectFit ? images[0].objectFit : 'object-cover'}" src={images[0].src} alt={images[0].alt} />
 		</div>
 	</section>
 {:else}
