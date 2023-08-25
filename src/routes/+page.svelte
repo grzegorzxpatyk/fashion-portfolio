@@ -5,55 +5,11 @@
 	import { InstagramLogo, EnvelopeClosed } from 'radix-icons-svelte';
 	import { images } from '$lib/images';
 	import portrait from '$lib/images';
-	import { Positions } from '$lib/enums/Positions.enum';
+	import { ObjectFit } from '$lib/enums/ObjectFit.enum';
 </script>
 
 <main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar">
-	<section class="h-screen w-screen flex justify-center items-center snap-start bg-yellow-200">
-		<h1 class="text-5xl uppercase">portfolio</h1>
-	</section>
 	<AboutMeSection {portrait} />
-	<PortfolioSection
-		images={[
-			{ src: images.half.half19, alt: 'something random' },
-			{ src: images.half.half37, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
-			{ src: images.half.half29, alt: 'something random' },
-			{ src: images.half.half6, alt: 'something random' }
-		]}
-	/>
-
-	<PortfolioSection
-		images={[
-			{ src: images.third.third13, alt: 'something random' },
-			{ src: images.third.third12, alt: 'something random' },
-			{ src: images.third.third36, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
-			{ src: images.third.third15, alt: 'something random' },
-			{ src: images.third.third23, alt: 'something random' },
-			{ src: images.third.third7, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
-			{ src: images.third.third104, alt: 'something random' },
-			{ src: images.third.third5, alt: 'something random' },
-			{ src: images.third.third50, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
-			{ src: images.third.third105, alt: 'something random' },
-			{ src: images.third.third21, alt: 'something random' },
-			{ src: images.third.third22, alt: 'something random' }
-		]}
-	/>
 	<PortfolioSection
 		images={[
 			{ src: images.third.third31, alt: 'something random' },
@@ -63,30 +19,30 @@
 	/>
 	<PortfolioSection
 		images={[
-			{ src: images.third.third34, alt: 'something random' },
-			{ src: images.third.third33, alt: 'something random' },
-			{ src: images.third.third35, alt: 'something random' }
+			{ src: images.half.half19, alt: 'something random' },
+			{ src: images.half.half37, alt: 'something random' }
 		]}
 	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third13, alt: 'something random' },
+			{ src: images.third.third12, alt: 'something random' },
+			{ src: images.third.third36, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third54, alt: 'something random' },
+			{ src: images.third.third65, alt: 'something random' },
+			{ src: images.third.third68, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection images={[{ src: images.full.full7, alt: 'something random' }]} />
 	<PortfolioSection
 		images={[
 			{ src: images.third.third94, alt: 'something random' },
 			{ src: images.third.third100, alt: 'something random' },
 			{ src: images.third.third106, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
-			{ src: images.third.third119, alt: 'something random' },
-			{ src: images.third.third108, alt: 'something random' },
-			{ src: images.third.third26, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
-			{ src: images.third.third6, alt: 'something random' },
-			{ src: images.third.third14, alt: 'something random' },
-			{ src: images.third.third39, alt: 'something random' }
 		]}
 	/>
 	<PortfolioSection
@@ -98,23 +54,262 @@
 	/>
 	<PortfolioSection
 		images={[
+			{ src: images.third.third3, alt: 'something random' },
+			{ src: images.third.third66, alt: 'something random' },
+			{ src: images.third.third28, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection images={[{ src: images.full.full8, alt: 'something random' }]} />
+	<PortfolioSection
+		images={[
+			{ src: images.third.third104, alt: 'something random' },
+			{ src: images.third.third5, alt: 'something random' },
+			{ src: images.third.third50, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third41, alt: 'something random' },
+			{ src: images.third.third82, alt: 'something random' },
+			{ src: images.third.third30, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.half.half29, alt: 'something random' },
+			{ src: images.half.half6, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third57, alt: 'something random' },
+			{ src: images.third.third89, alt: 'something random' },
+			{ src: images.third.third111, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third6, alt: 'something random' },
+			{ src: images.third.third14, alt: 'something random' },
+			{ src: images.third.third39, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
 			{ src: images.third.third40, alt: 'something random' },
 			{ src: images.third.third99, alt: 'something random' },
 			{ src: images.third.third1, alt: 'something random' }
 		]}
 	/>
-	
-	<PortfolioSection images={[{ src: images.full.full8, alt: 'something random' }]} />
-	<PortfolioSection images={[{ src: images.full.full10, alt: 'something random' }]} />
-	<PortfolioSection images={[{ src: images.full.full5, alt: 'something random' }]} />
-	<PortfolioSection images={[{ src: images.full.full3, alt: 'something random' }]} />
-	<PortfolioSection images={[{ src: images.full.full7, alt: 'something random' }]} />
+	<PortfolioSection
+		images={[
+			{ src: images.third.third11, alt: 'something random' },
+			{ src: images.third.third17, alt: 'something random' },
+			{ src: images.third.third117, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third45, alt: 'something random' },
+			{ src: images.third.third42, alt: 'something random' },
+			{ src: images.third.third63, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third15, alt: 'something random' },
+			{ src: images.third.third23, alt: 'something random' },
+			{ src: images.third.third7, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third105, alt: 'something random' },
+			{ src: images.third.third21, alt: 'something random' },
+			{ src: images.third.third22, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third37, alt: 'something random' },
+			{ src: images.third.third93, alt: 'something random' },
+			{ src: images.third.third44, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third16, alt: 'something random' },
+			{ src: images.third.third51, alt: 'something random' },
+			{ src: images.third.third46, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third62, alt: 'something random' },
+			{ src: images.third.third60, alt: 'something random' },
+			{ src: images.third.third98, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third19, alt: 'something random' },
+			{ src: images.third.third79, alt: 'something random' },
+			{ src: images.third.third43, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third4, alt: 'something random' },
+			{ src: images.third.third90, alt: 'something random' },
+			{ src: images.third.third97, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third61, alt: 'something random' },
+			{ src: images.third.third58, alt: 'something random' },
+			{ src: images.third.third49, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third112, alt: 'something random' },
+			{ src: images.third.third72, alt: 'something random' },
+			{ src: images.third.third92, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third29, alt: 'something random' },
+			{ src: images.third.third64, alt: 'something random' },
+			{ src: images.third.third70, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third52, alt: 'something random' },
+			{ src: images.third.third8, alt: 'something random' },
+			{ src: images.third.third91, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third34, alt: 'something random' },
+			{ src: images.third.third33, alt: 'something random' },
+			{ src: images.third.third35, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third119, alt: 'something random' },
+			{ src: images.third.third108, alt: 'something random' },
+			{ src: images.third.third26, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third75, alt: 'something random' },
+			{ src: images.third.third20, alt: 'something random' },
+			{ src: images.third.third18, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third115, alt: 'something random' },
+			{ src: images.third.third38, alt: 'something random' },
+			{ src: images.third.third81, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third59, alt: 'something random' },
+			{ src: images.third.third77, alt: 'something random' },
+			{ src: images.third.third32, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third9, alt: 'something random' },
+			{ src: images.third.third2, alt: 'something random' },
+			{ src: images.third.third73, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third48, alt: 'something random' },
+			{ src: images.third.third74, alt: 'something random' },
+			{ src: images.third.third87, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third69, alt: 'something random' },
+			{ src: images.third.third88, alt: 'something random' },
+			{ src: images.third.third47, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third95, alt: 'something random' },
+			{ src: images.third.third71, alt: 'something random' },
+			{ src: images.third.third96, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third101, alt: 'something random' },
+			{ src: images.third.third27, alt: 'something random' },
+			{ src: images.third.third55, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third86, alt: 'something random' },
+			{ src: images.third.third118, alt: 'something random' },
+			{ src: images.third.third84, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third113, alt: 'something random' },
+			{ src: images.third.third10, alt: 'something random' },
+			{ src: images.third.third53, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third67, alt: 'something random' },
+			{ src: images.third.third80, alt: 'something random' },
+			{ src: images.third.third102, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third83, alt: 'something random' },
+			{ src: images.third.third56, alt: 'something random' },
+			{ src: images.third.third110, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third114, alt: 'something random' },
+			{ src: images.third.third24, alt: 'something random' },
+			{ src: images.third.third107, alt: 'something random' }
+		]}
+	/>
+
+	<PortfolioSection
+		images={[{ src: images.full.full10, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN }]}
+	/>
 	<PortfolioSection images={[{ src: images.full.full1, alt: 'something random' }]} />
-	<PortfolioSection images={[{ src: images.full.full6, alt: 'something random' }]} />
 	<PortfolioSection images={[{ src: images.full.full11, alt: 'something random' }]} />
-	<PortfolioSection images={[{ src: images.full.full2, alt: 'something random' }]} />
+	<PortfolioSection
+		images={[{ src: images.full.full2, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN }]}
+	/>
 	<PortfolioSection images={[{ src: images.full.full9, alt: 'something random' }]} />
-	<PortfolioSection images={[{ src: images.full.full4, alt: 'something random' }]} />
+	<PortfolioSection
+		images={[{ src: images.full.full4, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN }]}
+	/>
 
 	<section
 		class="h-screen w-screen bg-sky-200 flex flex-col justify-center items-center snap-start select-none"
