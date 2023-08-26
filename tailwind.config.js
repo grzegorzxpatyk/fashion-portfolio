@@ -1,9 +1,16 @@
 /** @type {import('tailwindcss').Config} */
+import tailwindCss3d from 'tailwindcss-3d'
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'barlow': "'Barlow', sans-serif",
+      }
+    },
   },
-  plugins: [],
+  plugins: [
+    (tailwindCss3d)({ legacy: true }),
+  ],
 }
 
