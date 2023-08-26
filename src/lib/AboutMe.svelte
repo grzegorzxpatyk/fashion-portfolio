@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { ChevronDown, InstagramLogo } from 'radix-icons-svelte';
+	import { InstagramLogo } from 'radix-icons-svelte';
+	import { ScrollDownButton } from '$lib';
 
 	export let portrait: string;
 </script>
@@ -27,9 +28,9 @@
 				efficiency, and productivity in translating concepts into captivating collections. Ready to
 				bring fresh, trendsetting ideas to your brand.
 			</p>
-            <div class="w-full flex justify-center items-center">
-                <ChevronDown size={30} />
-            </div>
+			<div class="w-full flex justify-center items-center">
+				<ScrollDownButton />
+			</div>
 		</div>
 		<div class="h-[85vh] w-full p-6 pl-3 md:p-10 md:pl-5">
 			<img
