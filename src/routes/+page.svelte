@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { PortfolioSection, AboutMeSection } from '$lib';
 	import '../app.css';
 	import './styles.css';
@@ -6,10 +6,14 @@
 	import { images } from '$lib/images';
 	import portrait from '$lib/images';
 	import { ObjectFit } from '$lib/enums/ObjectFit.enum';
+	
+	function scroll(event: KeyboardEvent) {
+		console.log(event);
+	}
 </script>
-
-<main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar">
-	<AboutMeSection {portrait} />
+<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+<main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar" on:keydown={scroll}>
+	<AboutMeSection portrait={images.portrait1} portfolio={images.portfolio} />
 	<PortfolioSection
 		images={[
 			{ src: images.third.third31, alt: 'something random' },
@@ -86,6 +90,9 @@
 			{ src: images.third.third89, alt: 'something random' },
 			{ src: images.third.third111, alt: 'something random' }
 		]}
+	/>
+	<PortfolioSection
+		images={[{ src: images.full.full2, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN }]}
 	/>
 	<PortfolioSection
 		images={[
@@ -178,6 +185,7 @@
 			{ src: images.third.third92, alt: 'something random' }
 		]}
 	/>
+	<PortfolioSection images={[{ src: images.full.full1, alt: 'something random' }]} />
 	<PortfolioSection
 		images={[
 			{ src: images.third.third29, alt: 'something random' },
@@ -187,9 +195,9 @@
 	/>
 	<PortfolioSection
 		images={[
-			{ src: images.third.third52, alt: 'something random' },
-			{ src: images.third.third8, alt: 'something random' },
-			{ src: images.third.third91, alt: 'something random' }
+			{ src: images.third.third115, alt: 'something random' },
+			{ src: images.third.third38, alt: 'something random' },
+			{ src: images.third.third81, alt: 'something random' }
 		]}
 	/>
 	<PortfolioSection
@@ -200,10 +208,13 @@
 		]}
 	/>
 	<PortfolioSection
+		images={[{ src: images.full.full10, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN, background: 'black' }]}
+	/>
+	<PortfolioSection
 		images={[
-			{ src: images.third.third119, alt: 'something random' },
-			{ src: images.third.third108, alt: 'something random' },
-			{ src: images.third.third26, alt: 'something random' }
+			{ src: images.third.third95, alt: 'something random' },
+			{ src: images.third.third71, alt: 'something random' },
+			{ src: images.third.third96, alt: 'something random' }
 		]}
 	/>
 	<PortfolioSection
@@ -215,9 +226,16 @@
 	/>
 	<PortfolioSection
 		images={[
-			{ src: images.third.third115, alt: 'something random' },
-			{ src: images.third.third38, alt: 'something random' },
-			{ src: images.third.third81, alt: 'something random' }
+			{ src: images.third.third119, alt: 'something random' },
+			{ src: images.third.third108, alt: 'something random' },
+			{ src: images.third.third26, alt: 'something random' }
+		]}
+	/>
+	<PortfolioSection
+		images={[
+			{ src: images.third.third69, alt: 'something random' },
+			{ src: images.third.third88, alt: 'something random' },
+			{ src: images.third.third47, alt: 'something random' }
 		]}
 	/>
 	<PortfolioSection
@@ -242,18 +260,7 @@
 		]}
 	/>
 	<PortfolioSection
-		images={[
-			{ src: images.third.third69, alt: 'something random' },
-			{ src: images.third.third88, alt: 'something random' },
-			{ src: images.third.third47, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
-			{ src: images.third.third95, alt: 'something random' },
-			{ src: images.third.third71, alt: 'something random' },
-			{ src: images.third.third96, alt: 'something random' }
-		]}
+		images={[{ src: images.full.full4, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN }]}
 	/>
 	<PortfolioSection
 		images={[
@@ -278,62 +285,55 @@
 	/>
 	<PortfolioSection
 		images={[
-			{ src: images.third.third67, alt: 'something random' },
-			{ src: images.third.third80, alt: 'something random' },
-			{ src: images.third.third102, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
-			{ src: images.third.third83, alt: 'something random' },
-			{ src: images.third.third56, alt: 'something random' },
-			{ src: images.third.third110, alt: 'something random' }
-		]}
-	/>
-	<PortfolioSection
-		images={[
 			{ src: images.third.third114, alt: 'something random' },
 			{ src: images.third.third24, alt: 'something random' },
 			{ src: images.third.third107, alt: 'something random' }
 		]}
 	/>
-
 	<PortfolioSection
-		images={[{ src: images.full.full10, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN }]}
+		images={[
+			{ src: images.third.third67, alt: 'something random' },
+			{ src: images.third.third80, alt: 'something random' },
+			{ src: images.third.third102, alt: 'something random' }
+		]}
 	/>
-	<PortfolioSection images={[{ src: images.full.full1, alt: 'something random' }]} />
+	
+	<PortfolioSection
+		images={[
+			{ src: images.third.third52, alt: 'something random' },
+			{ src: images.third.third8, alt: 'something random' },
+			{ src: images.third.third91, alt: 'something random' }
+		]}
+	/>
 	<PortfolioSection images={[{ src: images.full.full11, alt: 'something random' }]} />
-	<PortfolioSection
-		images={[{ src: images.full.full2, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN }]}
-	/>
-	<PortfolioSection images={[{ src: images.full.full9, alt: 'something random' }]} />
-	<PortfolioSection
-		images={[{ src: images.full.full4, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN }]}
-	/>
+	
 
 	<section
-		class="h-screen w-screen bg-sky-200 flex flex-col justify-center items-center snap-start select-none"
+		class="h-[90vh] w-screen flex flex-col justify-center items-center snap-start select-none"
 	>
-		<div>
-			<h1 class="text-5xl mb-24">Contact</h1>
+		<div class="mb-32">
+			<img src={images.contact} alt="contact" class="h-32">
 		</div>
 		<div
 			class="w-full flex flex-col items-start justify-between md:flex-row md:justify-evenly md:items-center"
 		>
 			<div class="flex flex-col justify-center items-center">
-				<p>You can check my instagram and slide into my DM's</p>
-				<h2 class="text-2xl flex flex-row justify-between items-center mt-2">
+				<p>check my instagram</p>
+				<h2 class="text-2xl flex flex-row justify-between items-baseline mt-2">
 					<InstagramLogo class="mr-2" />
 					<a href="https://www.instagram.com/martynaregucka/" target="_blank">martynaregucka</a>
 				</h2>
 			</div>
 			<div class="flex flex-col justify-center items-center">
-				<p>or just send my the good ol' email! Anyway, feel free to hit me up!</p>
-				<h2 class="text-2xl flex flex-row justify-between items-center mt-2">
+				<p>or send me an email</p>
+				<h2 class="text-2xl flex flex-row justify-between items-baseline mt-2">
 					<EnvelopeClosed class="mr-2" />
 					<a href="mailto:martyna.regucka@gmail.com" target="_blank">martyna.regucka@gmail.com</a>
 				</h2>
 			</div>
 		</div>
 	</section>
+	<footer class="h-[10vh] flex justify-center items-center">
+		<span class="text-zinc-600 uppercase tracking-widest text-xs">copyright 2023 martyna regucka - all rights reserved</span>
+	</footer>
 </main>
