@@ -13,7 +13,7 @@
 </script>
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar" on:keydown={scroll}>
-	<AboutMeSection portrait={images.portrait1} portfolio={images.portfolio} />
+	<AboutMeSection portrait={portrait} portfolio={images.portfolio} />
 	<PortfolioSection
 		images={[
 			{ src: images.third.third31, alt: 'something random' },
