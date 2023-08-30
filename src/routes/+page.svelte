@@ -7,13 +7,32 @@
 	import portrait from '$lib/images';
 	import { ObjectFit } from '$lib/enums/ObjectFit.enum';
 	
-	function scroll(event: KeyboardEvent) {
-		console.log(event);
+	function handleKeyDown(event: KeyboardEvent) {
+		if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') {
+			return;
+		}
+		event.preventDefault();
+		const main = document.querySelector('main');
+		if (!main) return;
+		let scroll = 0;
+		if (event.key === 'ArrowDown') {
+			 scroll = window.innerHeight;
+		} else if (event.key === 'ArrowUp') {
+			scroll = -window.innerHeight;
+		}
+		document.querySelector('main')?.scroll({
+			top: scroll + main?.scrollTop,
+			left: 0,
+			behavior: 'smooth'
+		});
+	}
 	}
 </script>
+
+<svelte:document on:keydown={handleKeyDown}></svelte:document>
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar" on:keydown={scroll}>
-	<AboutMeSection portrait={images.portrait1} portfolio={images.portfolio} />
+	<AboutMeSection portrait={portrait} portfolio={images.portfolio} />
 	<PortfolioSection
 		images={[
 			{ src: images.third.third31, alt: 'something random' },
