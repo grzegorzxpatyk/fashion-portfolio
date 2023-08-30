@@ -2,11 +2,13 @@
 	import { PortfolioSection, AboutMeSection } from '$lib';
 	import '../app.css';
 	import './styles.css';
-	import { InstagramLogo, EnvelopeClosed } from 'radix-icons-svelte';
+	import { InstagramLogo, EnvelopeClosed, ChevronUp, ChevronDown } from 'radix-icons-svelte';
 	import { images } from '$lib/images';
 	import portrait from '$lib/images';
 	import { ObjectFit } from '$lib/enums/ObjectFit.enum';
 	
+	let isKeyboardInfoDisplayed = false;
+
 	function handleKeyDown(event: KeyboardEvent) {
 		if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') {
 			return;
@@ -26,12 +28,19 @@
 			behavior: 'smooth'
 		});
 	}
+
+	function handleScroll(event: Event) {
+		if ((event.target as HTMLElement).scrollTop > window.innerHeight && (event.target as HTMLElement).scrollTop < 5 * window.innerHeight) {
+			isKeyboardInfoDisplayed = true;
+		} else {
+			isKeyboardInfoDisplayed = false;
+		}
 	}
 </script>
 
 <svelte:document on:keydown={handleKeyDown}></svelte:document>
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar" on:keydown={scroll}>
+<main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar" on:scroll={handleScroll}>
 	<AboutMeSection portrait={portrait} portfolio={images.portfolio} />
 	<PortfolioSection
 		images={[
@@ -356,3 +365,7 @@
 		<span class="text-zinc-600 uppercase tracking-widest text-xs">copyright 2023 martyna regucka - all rights reserved</span>
 	</footer>
 </main>
+
+<div class="{isKeyboardInfoDisplayed ? 'opacity-80' : 'opacity-0'} backdrop-hue-rotate-180 backdrop-blur-sm bg-opacity-50 fixed bottom-4 left-4 p-6 rounded-md border z-50 transition-opacity duration-1000 delay-500 uppercase text-white">
+	Use <kbd><ChevronUp size={24} class="inline mx-1" /></kbd> and <kbd><ChevronDown size={24} class="inline mx-1" /></kbd> to navigate
+</div>
