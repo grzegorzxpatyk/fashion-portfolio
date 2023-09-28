@@ -6,8 +6,11 @@
 	import { images } from '$lib/images';
 	import portrait from '$lib/images';
 	import { ObjectFit } from '$lib/enums/ObjectFit.enum';
+	import { onMount } from 'svelte';
+	import ScrollToTopButton from '$lib/ScrollToTopButton.svelte';
 	
 	let isKeyboardInfoDisplayed = false;
+	let isDOMContentLoaded = false;
 
 	function handleKeyDown(event: KeyboardEvent) {
 		if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') {
@@ -36,11 +39,17 @@
 			isKeyboardInfoDisplayed = false;
 		}
 	}
+
+	onMount(() => {
+		isDOMContentLoaded = true;
+
+		return () => { isDOMContentLoaded = false; }
+	})
 </script>
 
 <svelte:document on:keydown={handleKeyDown}></svelte:document>
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar" on:scroll={handleScroll}>
+<main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar {isDOMContentLoaded ? 'animate-blur-in delay-500' : 'blur-[15px]'}" on:scroll={handleScroll}>
 	<AboutMeSection portrait={portrait} portfolio={images.portfolio} />
 	<PortfolioSection
 		images={[
@@ -369,3 +378,5 @@
 <div class="{isKeyboardInfoDisplayed ? 'opacity-80' : 'opacity-0'} backdrop-hue-rotate-180 backdrop-blur-sm bg-opacity-50 fixed bottom-4 left-4 p-6 rounded-md border z-50 transition-opacity duration-1000 delay-500 uppercase text-white">
 	Use <kbd><ChevronUp size={24} class="inline mx-1" /></kbd> and <kbd><ChevronDown size={24} class="inline mx-1" /></kbd> to navigate
 </div>
+
+<ScrollToTopButton />
