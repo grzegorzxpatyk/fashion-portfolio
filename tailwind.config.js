@@ -6,6 +6,15 @@ export default {
     extend: {
       fontFamily: {
         'barlow': "'Barlow', sans-serif",
+      },
+      keyframes: {
+        'blur-in': {
+          '0%': { filter: 'blur(15px)' },
+          '100%': { filter: 'blur(0px)' }
+        },
+      },
+      animation: {
+        'blur-in': 'blur-in 2s ease-in-out 1',
       }
     },
   },
