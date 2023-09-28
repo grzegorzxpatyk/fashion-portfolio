@@ -378,3 +378,5 @@
 <div class="{isKeyboardInfoDisplayed ? 'opacity-80' : 'opacity-0'} backdrop-hue-rotate-180 backdrop-blur-sm bg-opacity-50 fixed bottom-4 left-4 p-6 rounded-md border z-50 transition-opacity duration-1000 delay-500 uppercase text-white">
 	Use <kbd><ChevronUp size={24} class="inline mx-1" /></kbd> and <kbd><ChevronDown size={24} class="inline mx-1" /></kbd> to navigate
 </div>
+
+<ScrollToTopButton />
