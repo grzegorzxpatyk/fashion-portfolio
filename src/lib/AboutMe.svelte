@@ -19,7 +19,7 @@
 			</div>
 			<div class="w-full flex flex-row justify-between items-center mb-4">
 				<h1
-					class="text-4xl font-barlow font-bold uppercase border border-zinc-700 rounded-[50%] py-8 px-12 tracking-widest transition-all duration-200"
+					class="text-4xl font-barlow font-bold uppercase border border-zinc-700 rounded-[50%] py-8 px-12 tracking-widest drop-shadow-2xl hover:animate-[spin-y_1.5s_ease-in-out_1]"
 				>
 					Martyna Regucka
 				</h1>
