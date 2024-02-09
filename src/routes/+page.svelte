@@ -33,7 +33,7 @@
 	}
 
 	function handleScroll(event: Event) {
-		if ((event.target as HTMLElement).scrollTop > window.innerHeight && (event.target as HTMLElement).scrollTop < 5 * window.innerHeight) {
+		if ((event.target as HTMLElement).scrollTop >= window.innerHeight - 1 && (event.target as HTMLElement).scrollTop < 5 * window.innerHeight) {
 			isKeyboardInfoDisplayed = true;
 		} else {
 			isKeyboardInfoDisplayed = false;
