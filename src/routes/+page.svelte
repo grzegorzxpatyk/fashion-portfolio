@@ -10,6 +10,7 @@
 	import ScrollToTopButton from '$lib/ScrollToTopButton.svelte';
 	
 	let isKeyboardInfoDisplayed = false;
+	let isScrollToTopButtonDisplayed = false;
 	let isDOMContentLoaded = false;
 
 	function handleKeyDown(event: KeyboardEvent) {
@@ -37,6 +38,12 @@
 			isKeyboardInfoDisplayed = true;
 		} else {
 			isKeyboardInfoDisplayed = false;
+		}
+
+		if ((event.target as HTMLElement).scrollTop >= window.innerHeight - 1) {
+			isScrollToTopButtonDisplayed = true;
+		} else {
+			isScrollToTopButtonDisplayed = false;
 		}
 	}
 
@@ -379,4 +386,4 @@
 	Use <kbd><ChevronUp size={24} class="inline mx-1" /></kbd> and <kbd><ChevronDown size={24} class="inline mx-1" /></kbd> to navigate
 </div>
 
-<ScrollToTopButton />
+<ScrollToTopButton isButtonDisplayed={isScrollToTopButtonDisplayed} />
