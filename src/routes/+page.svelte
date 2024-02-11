@@ -8,7 +8,7 @@
 	import { ObjectFit } from '$lib/enums/ObjectFit.enum';
 	import { onMount } from 'svelte';
 	import ScrollToTopButton from '$lib/ScrollToTopButton.svelte';
-	
+
 	let isKeyboardInfoDisplayed = false;
 	let isScrollToTopButtonDisplayed = false;
 	let isDOMContentLoaded = false;
@@ -22,7 +22,7 @@
 		if (!main) return;
 		let scroll = 0;
 		if (event.key === 'ArrowDown') {
-			 scroll = window.innerHeight;
+			scroll = window.innerHeight;
 		} else if (event.key === 'ArrowUp') {
 			scroll = -window.innerHeight;
 		}
@@ -34,7 +34,10 @@
 	}
 
 	function handleScroll(event: Event) {
-		if ((event.target as HTMLElement).scrollTop >= window.innerHeight - 1 && (event.target as HTMLElement).scrollTop < 5 * window.innerHeight) {
+		if (
+			(event.target as HTMLElement).scrollTop >= window.innerHeight - 1 &&
+			(event.target as HTMLElement).scrollTop < 5 * window.innerHeight
+		) {
 			isKeyboardInfoDisplayed = true;
 		} else {
 			isKeyboardInfoDisplayed = false;
@@ -50,14 +53,39 @@
 	onMount(() => {
 		isDOMContentLoaded = true;
 
-		return () => { isDOMContentLoaded = false; }
-	})
+		return () => {
+			isDOMContentLoaded = false;
+		};
+	});
+
+	let isDesktopOrWider: boolean | undefined;
+
+	const markIsDesktopWidth = () => {
+		if (window.innerWidth >= 768) {
+			isDesktopOrWider = true;
+		} else {
+			isDesktopOrWider = false;
+		}
+	};
+
+	onMount(() => {
+		isDesktopOrWider = window.innerWidth >= 768;
+		window.matchMedia('(min-width: 768px)').addEventListener('change', markIsDesktopWidth);
+		return () => {
+			isDesktopOrWider = undefined;
+		};
+	});
 </script>
 
-<svelte:document on:keydown={handleKeyDown}></svelte:document>
+<svelte:document on:keydown={handleKeyDown} />
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<main class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar {isDOMContentLoaded ? 'animate-blur-in delay-500' : 'blur-[15px]'}" on:scroll={handleScroll}>
-	<AboutMeSection portrait={portrait} portfolio={images.portfolio} />
+<main
+	class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar {isDOMContentLoaded
+		? 'animate-blur-in delay-500'
+		: 'blur-[15px]'}"
+	on:scroll={handleScroll}
+>
+	<AboutMeSection {portrait} portfolio={images.portfolio} />
 	<PortfolioSection
 		images={[
 			{ src: images.third.third31, alt: 'something random' },
@@ -252,7 +280,14 @@
 		]}
 	/>
 	<PortfolioSection
-		images={[{ src: images.full.full10, alt: 'something random', objectFit: ObjectFit.SCALE_DOWN, background: 'black' }]}
+		images={[
+			{
+				src: images.full.full10,
+				alt: 'something random',
+				objectFit: ObjectFit.SCALE_DOWN,
+				background: 'black'
+			}
+		]}
 	/>
 	<PortfolioSection
 		images={[
@@ -341,7 +376,7 @@
 			{ src: images.third.third102, alt: 'something random' }
 		]}
 	/>
-	
+
 	<PortfolioSection
 		images={[
 			{ src: images.third.third52, alt: 'something random' },
@@ -350,13 +385,12 @@
 		]}
 	/>
 	<PortfolioSection images={[{ src: images.full.full11, alt: 'something random' }]} />
-	
 
 	<section
 		class="h-[90vh] w-screen flex flex-col justify-center items-center snap-start select-none"
 	>
 		<div class="mb-32">
-			<img src={images.contact} alt="contact" class="h-32">
+			<img src={images.contact} alt="contact" class="h-32" />
 		</div>
 		<div
 			class="w-full flex flex-col items-start justify-between md:flex-row md:justify-evenly md:items-center"
@@ -378,12 +412,21 @@
 		</div>
 	</section>
 	<footer class="h-[10vh] flex justify-center items-center">
-		<span class="text-zinc-600 uppercase tracking-widest text-xs">copyright 2023 martyna regucka - all rights reserved</span>
+		<span class="text-zinc-600 uppercase tracking-widest text-xs"
+			>copyright 2023 martyna regucka - all rights reserved</span
+		>
 	</footer>
 </main>
 
-<div class="{isKeyboardInfoDisplayed ? 'opacity-80' : 'opacity-0'} backdrop-hue-rotate-180 backdrop-blur-sm bg-opacity-50 fixed bottom-4 left-4 p-6 rounded-md border z-50 transition-opacity duration-1000 delay-500 uppercase text-white">
-	Use <kbd><ChevronUp size={24} class="inline mx-1" /></kbd> and <kbd><ChevronDown size={24} class="inline mx-1" /></kbd> to navigate
-</div>
+{#if isDesktopOrWider}
+	<div
+		class="{isKeyboardInfoDisplayed
+			? 'opacity-80'
+			: 'opacity-0'} backdrop-hue-rotate-180 backdrop-blur-sm bg-opacity-50 fixed bottom-4 left-4 p-6 rounded-md border z-50 transition-opacity duration-1000 delay-500 uppercase text-white"
+	>
+		Use <kbd><ChevronUp size={24} class="inline mx-1" /></kbd> and
+		<kbd><ChevronDown size={24} class="inline mx-1" /></kbd> to navigate
+	</div>
+{/if}
 
 <ScrollToTopButton isButtonDisplayed={isScrollToTopButtonDisplayed} />
