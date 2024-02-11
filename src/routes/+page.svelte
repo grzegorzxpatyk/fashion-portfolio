@@ -61,7 +61,7 @@
 	let isDesktopOrWider: boolean | undefined;
 
 	const markIsDesktopWidth = () => {
-		if (window.innerWidth >= 768) {
+		if (window.innerWidth >= 1024) {
 			isDesktopOrWider = true;
 		} else {
 			isDesktopOrWider = false;
@@ -69,8 +69,8 @@
 	};
 
 	onMount(() => {
-		isDesktopOrWider = window.innerWidth >= 768;
-		window.matchMedia('(min-width: 768px)').addEventListener('change', markIsDesktopWidth);
+		isDesktopOrWider = window.innerWidth >= 1024;
+		window.matchMedia('(min-width: 1024px)').addEventListener('change', markIsDesktopWidth);
 		return () => {
 			isDesktopOrWider = undefined;
 		};
@@ -389,8 +389,8 @@
 	<section
 		class="h-[90vh] w-screen flex flex-col justify-center items-center snap-start select-none"
 	>
-		<div class="mb-32">
-			<img src={images.contact} alt="contact" class="h-32" />
+		<div class="sm:mb-12 mb-32">
+			<img src={images.contact} alt="contact" class="sm:h-24 h-32" />
 		</div>
 		<div
 			class="w-full flex flex-col items-start justify-between md:flex-row md:justify-evenly md:items-center"
