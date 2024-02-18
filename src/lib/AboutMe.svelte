@@ -9,7 +9,7 @@
 <section
 	class="h-screen w-screen bg-white snap-start selection:text-fuchsia-300 selection:bg-fuchsia-800"
 >
-	<header class="h-[20svh] flex justify-center md:justify-between lg:justify-center items-center p-2 lg:p-4">
+	<header class="h-[20svh] flex justify-center portrait:justify-center md:justify-between lg:justify-center items-center p-2 lg:p-4">
 		<img src={portfolio} alt="portfolio" class="h-full object-scale-down min-w-[12rem] max-w-[32rem]" />
 		<h1
 			class="portrait:hidden md:block lg:hidden text-2xl text-center font-barlow font-bold uppercase border border-zinc-700 rounded-[50%] py-4 px-8 tracking-widest drop-shadow-2xl hover:animate-[spin-y_1.5s_ease-in-out_1]"
