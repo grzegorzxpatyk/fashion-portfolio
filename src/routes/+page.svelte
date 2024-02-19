@@ -50,14 +50,6 @@
 		}
 	}
 
-	onMount(() => {
-		isDOMContentLoaded = true;
-
-		return () => {
-			isDOMContentLoaded = false;
-		};
-	});
-
 	let isDesktopOrWider: boolean | undefined;
 
 	const markIsDesktopWidth = () => {
@@ -69,9 +61,11 @@
 	};
 
 	onMount(() => {
+		isDOMContentLoaded = true;
 		isDesktopOrWider = window.innerWidth >= 1024;
 		window.matchMedia('(min-width: 1024px)').addEventListener('change', markIsDesktopWidth);
 		return () => {
+			isDOMContentLoaded = false;
 			isDesktopOrWider = undefined;
 		};
 	});
