@@ -376,13 +376,13 @@
 	<PortfolioSection images={[{ src: images.full.full11, alt: 'something random' }]} />
 
 	<section
-		class="h-[90vh] w-screen flex flex-col justify-center items-center snap-start select-none">
-		<div class="sm:mb-12 mb-32">
-			<img src={images.contact} alt="contact" class="sm:h-24 h-32" />
+		class="h-[90svh] w-screen flex flex-col justify-center items-center snap-start select-none p-4">
+		<div class="mb-12 lg:mb-24">
+			<img src={images.contact} alt="contact" class="sm:h-24 h-32 object-scale-down" />
 		</div>
 		<div
-			class="w-full flex flex-col items-start justify-between md:flex-row md:justify-evenly md:items-center">
-			<div class="flex flex-col justify-center items-center">
+			class="w-full flex flex-col items-center justify-between md:flex-row md:justify-evenly">
+			<div class="flex flex-col justify-center items-center mb-6 md:mb-0">
 				<p>check my instagram</p>
 				<h2 class="text-2xl flex flex-row justify-between items-baseline mt-2">
 					<InstagramLogo class="mr-2" />
@@ -398,7 +398,7 @@
 			</div>
 		</div>
 	</section>
-	<footer class="h-[10vh] flex justify-center items-center">
+	<footer class="h-[10svh] flex justify-center items-center p-4">
 		<span class="text-zinc-600 uppercase tracking-widest text-xs"
 			>copyright 2023 martyna regucka - all rights reserved</span>
 	</footer>
