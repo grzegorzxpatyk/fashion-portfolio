@@ -416,13 +416,13 @@
 
 {#if isViewportOrientationPopupShown}
 	<div
-		class="fixed top-0 left-0 h-screen w-screen z-[100] flex justify-center items-center bg-pink-600 bg-opacity-50 backdrop-blur-sm p-4">
+		class="fixed top-0 left-0 h-screen w-screen z-[100] flex justify-center items-center bg-pink-600 bg-opacity-50 backdrop-blur-sm p-14">
 		<button
 			on:click={hideViewportOrientationPopup}
 			class="underline underline-offset-2 fixed top-5 right-5">
 			Close
 		</button>
-		<p class="text-4xl font-barlow text-justify font-bold p-8 rounded-xl bg-pink-200 bg-opacity-50 drop-shadow-xl">
+		<p class="text-4xl uppercase font-barlow text-center font-bold p-8">
 			<svg
 				class="m-auto mb-8"
 				width="70"
@@ -436,7 +436,7 @@
 					fill-rule="evenodd"
 					clip-rule="evenodd" />
 			</svg>
-			Flip your screen horizontaly for best experience.
+			Flip your screen
 		</p>
 	</div>
 {/if}
