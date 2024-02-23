@@ -65,7 +65,6 @@
 
 	const markIsViewportInLandscapeOrientation = () => {
 		isViewportInLandscapeOrientation = window.matchMedia('(orientation: landscape)').matches;
-		console.log(`isViewportInLandscapeOrientation: ${isViewportInLandscapeOrientation}`);
 	};
 
 	onMount(() => {
