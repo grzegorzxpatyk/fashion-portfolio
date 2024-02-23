@@ -106,6 +106,12 @@
 </script>
 
 <svelte:document on:keydown={handleKeyDown} />
+
+<svelte:head>
+	<title>Martyna Regucka - fashion designer & stylist portfolio</title>
+	<meta name="description" content="Martyna Regucka - fashion designer & stylist.">
+</svelte:head>
+
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <main
 	class="h-screen scroll-smooth snap-y snap-mandatory overflow-x-hidden no-scrollbar {isDOMContentLoaded
