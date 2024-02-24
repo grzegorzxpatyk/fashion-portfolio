@@ -30,7 +30,7 @@
 		on:click={handleAvatarClick}
 		on:animationend={handleAvatarAnimationEnd} />
 	<p
-		class="hidden portrait:max-md:block h-full overflow-y-auto overflow-x-hidden w-full px-6 text-justify text-lg relative -top-full left-[50%] translate-x-[-50%] backface-hidden {isPortraitFlipping &&
+		class="hidden portrait:max-md:block h-full overflow-y-auto overflow-x-hidden w-full px-6 text-justify text-lg uppercase relative -top-full left-[50%] translate-x-[-50%] backface-hidden {isPortraitFlipping &&
 			(isCardOnPortraitSide ? 'animate-flip-y-reverse' : 'animate-flip-y')} {isCardOnPortraitSide
 			? 'rotate-y-180'
 			: 'rotate-y-0'}"
